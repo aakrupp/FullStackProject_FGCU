@@ -10,6 +10,9 @@ Log -
     > Was in the process of hooking up the login page. 
     > To pick up next time, resume on login. Was working on the Layout comp, test to see that it 
         works. 
+    > I am getting a build error in vercel after the last 3 commits. Appears to be because of the
+        global state for login. 
+    > After review, I have discovered the entire global user state needs to be redone. 
 ---------------------------------------------------------------------------------------------------
 
 

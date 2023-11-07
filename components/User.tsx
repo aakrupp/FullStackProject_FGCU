@@ -6,7 +6,7 @@ const initialState = {
 };
 
 // Create a context for the user state
-const UserContext = createContext(null);
+const UserContext = createContext();
 
 // Define actions
 const SET_USER = 'SET_USER';
