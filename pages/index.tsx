@@ -3,8 +3,8 @@ import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 
-export const getStaticProps: GetStaticProps = async () => {
-  const feed = [
+export const getStaticProps: GetStaticProps = async () => { // React Next.js props
+  const feed = [ // "feed" is a "prop" of the "Blog" component
     {
       id: "1",
       title: "Prisma is the perfect ORM for Next.js",
@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     },
   ]
-  return { 
+  return { // return "props" to the "Blog" component
     props: { feed }, 
     revalidate: 10 
   }
@@ -26,8 +26,8 @@ type Props = {
   feed: PostProps[]
 }
 
-const Blog: React.FC<Props> = (props) => {
-  return (
+const Blog: React.FC<Props> = (props) => { // React Next.js "function"
+  return ( // the return for the page
     <Layout>
       <div className="page">
         <h1>Public Feed</h1>
