@@ -1,42 +1,15 @@
 import React from "react"
-import { GetStaticProps } from "next"
-import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
+import { type NextPage } from "next";
+import Link from "next/link";
+import Layout from "../components/Layout";
 
-export const getStaticProps: GetStaticProps = async () => { // React Next.js props
-  const feed = [ // "feed" is a "prop" of the "Blog" component
-    {
-      id: "1",
-      title: "Prisma is the perfect ORM for Next.js",
-      content: "[Prisma](https://github.com/prisma/prisma) and Next.js go _great_ together!",
-      published: false,
-      author: {
-        name: "Nikolas Burk",
-        email: "burk@prisma.io",
-      },
-    },
-  ]
-  return { // return "props" to the "Blog" component
-    props: { feed }, 
-    revalidate: 10 
-  }
-}
-
-type Props = {
-  feed: PostProps[]
-}
-
-const Blog: React.FC<Props> = (props) => { // React Next.js "function"
+const HomeScreen: NextPage= () => { // React Next.js "function"
   return ( // the return for the page
     <Layout>
       <div className="page">
-        <h1>Public Feed</h1>
+        <h1>Home</h1>
         <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
-            </div>
-          ))}
+          <Link href='./eventPages/events'><button>Events</button></Link>
         </main>
       </div>
       <style jsx>{`
@@ -57,4 +30,4 @@ const Blog: React.FC<Props> = (props) => { // React Next.js "function"
   )
 }
 
-export default Blog
+export default HomeScreen; // export the page
